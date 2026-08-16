@@ -51,10 +51,47 @@ $(function () {
     $('html, body').animate({ scrollTop: 0 }, 600);
   });
 
-  /* ---------- Scroll reveal (Intersection Observer) ---------- */
+  /* ---------- Scroll reveal ----------
+     GSAP + ScrollTrigger when available (smoother, staggered easing);
+     falls back to IntersectionObserver, then to "reveal everything" so
+     content is never stuck invisible if a CDN script fails to load. */
   var revealEls = document.querySelectorAll('.reveal-up');
+  var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  if ('IntersectionObserver' in window) {
+  if (window.gsap && window.ScrollTrigger && !prefersReducedMotion) {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Group elements that land in the same viewport chunk so they stagger
+    // together rather than firing one ScrollTrigger per element.
+    var groups = {};
+    revealEls.forEach(function (el) {
+      var key = Math.round(el.getBoundingClientRect().top / 200);
+      groups[key] = groups[key] || [];
+      groups[key].push(el);
+    });
+
+    Object.keys(groups).forEach(function (key) {
+      var group = groups[key];
+      gsap.set(group, { autoAlpha: 0, y: 32 });
+      ScrollTrigger.create({
+        trigger: group[0],
+        start: 'top 88%',
+        once: true,
+        onEnter: function () {
+          gsap.to(group, {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.8,
+            ease: 'power3.out',
+            stagger: 0.08,
+            onComplete: function () {
+              group.forEach(function (el) { el.classList.add('in-view'); });
+            }
+          });
+        }
+      });
+    });
+  } else if ('IntersectionObserver' in window && !prefersReducedMotion) {
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry, index) {
         if (entry.isIntersecting) {
@@ -70,8 +107,34 @@ $(function () {
 
     revealEls.forEach(function (el) { observer.observe(el); });
   } else {
-    // Fallback: reveal everything immediately
+    // Fallback / reduced motion: reveal everything immediately
     revealEls.forEach(function (el) { el.classList.add('in-view'); });
+  }
+
+  /* ---------- Hero visual: subtle pointer-tilt (desktop only, respects reduced motion) ---------- */
+  var $heroVisual = $('.ss-hero-visual');
+  if ($heroVisual.length && window.matchMedia('(hover: hover) and (pointer: fine)').matches && !prefersReducedMotion) {
+    var heroEl = $heroVisual[0];
+    var tiltRaf = null;
+
+    heroEl.addEventListener('mousemove', function (e) {
+      var rect = heroEl.getBoundingClientRect();
+      var relX = (e.clientX - rect.left) / rect.width - 0.5;
+      var relY = (e.clientY - rect.top) / rect.height - 0.5;
+
+      if (tiltRaf) cancelAnimationFrame(tiltRaf);
+      tiltRaf = requestAnimationFrame(function () {
+        if (window.gsap) {
+          gsap.to(heroEl, { rotateY: relX * 6, rotateX: relY * -6, duration: 0.6, ease: 'power2.out', transformPerspective: 1200 });
+        }
+      });
+    });
+
+    heroEl.addEventListener('mouseleave', function () {
+      if (window.gsap) {
+        gsap.to(heroEl, { rotateY: 0, rotateX: 0, duration: 0.8, ease: 'power3.out' });
+      }
+    });
   }
 
   /* ---------- Testimonial carousel controls (custom dots synced to Bootstrap carousel) ---------- */

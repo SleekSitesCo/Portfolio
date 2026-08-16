@@ -26,17 +26,11 @@ $(function () {
     }
   });
 
-  /* ---------- Smooth anchor scrolling ---------- */
-  $('a[href^="#"]').on('click', function (e) {
-    var targetId = $(this).attr('href');
-    if (targetId === '#' || targetId.length < 2) return;
-    var $target = $(targetId);
-    if ($target.length) {
-      e.preventDefault();
-      var offset = $target.offset().top - 84;
-      $('html, body').animate({ scrollTop: offset }, 650, 'swing');
-    }
-  });
+  /* ---------- Smooth anchor scrolling ----------
+     Handled natively: html { scroll-behavior: smooth; } in style.css does
+     the animation, and .ss-section / .ss-hero carry scroll-margin-top so
+     targets land below the fixed navbar instead of underneath it. No JS
+     needed for the scroll itself — anchors just use their real href="#id". */
 
   /* ---------- Back to top button ---------- */
   var $backToTop = $('#backToTop');

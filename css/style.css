@@ -50,6 +50,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -545,11 +547,13 @@ body::before {
   .ss-hero-visual { min-height: 380px; margin-top: 1rem; }
   .ss-window-dash { left: -2%; width: 150px; }
   .ss-window-badge { right: -2%; width: 160px; }
+  .ss-hero-blob { width: 320px; height: 320px; top: -50px; right: -50px; }
 }
 
 @media (max-width: 575.98px) {
   .ss-window-dash, .ss-window-badge { display: none; }
   .ss-hero-visual { min-height: 300px; }
+  .ss-hero-blob { width: 220px; height: 220px; top: -30px; right: -30px; }
 }
 
 /* ============ TRUST STRIP ============ */
@@ -579,8 +583,16 @@ body::before {
 .ss-trust-item p { color: var(--muted); font-size: 0.9rem; }
 
 /* ============ SECTIONS ============ */
-.ss-section { padding: var(--section-y) 0; position: relative; }
+.ss-section { padding: var(--section-y) 0; position: relative; scroll-margin-top: 72px; }
+.ss-hero { scroll-margin-top: 96px; }
 .ss-section-tint { background: var(--panel); }
+
+@media (max-width: 991.98px) {
+  .ss-section, .ss-hero { scroll-margin-top: 68px; }
+}
+@media (max-width: 575.98px) {
+  .ss-section, .ss-hero { scroll-margin-top: 68px; }
+}
 
 /* ============ PROJECTS ============ */
 .ss-project { margin-bottom: 0; }
@@ -769,7 +781,7 @@ body::before {
 .ss-service-card p { color: var(--muted); font-size: 0.92rem; line-height: 1.65; }
 
 /* ============ AI VIDEO ADS ============ */
-.ss-ads { background: linear-gradient(180deg, var(--light) 0%, var(--panel) 100%); position: relative; }
+.ss-ads { background: linear-gradient(180deg, var(--light) 0%, var(--panel) 100%); position: relative; overflow: hidden; }
 
 .ss-ads-list { list-style: none; padding: 0; margin: 1.6rem 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem 1rem; }
 .ss-ads-list li { font-size: 0.95rem; color: var(--dark); display: flex; align-items: center; gap: 0.55rem; }
@@ -865,7 +877,7 @@ body::before {
 .ss-play-btn:hover { background: var(--white); color: var(--dark); transform: scale(1.1); }
 
 @media (max-width: 991.98px) {
-  .ss-phones { min-height: 380px; margin-top: 2rem; }
+  .ss-phones { min-height: 380px; margin-top: 2rem; padding: 0 2.5rem; }
   .ss-phone { width: 150px; height: 300px; }
   .ss-phone-back, .ss-phone-side { width: 130px; height: 260px; }
   .ss-phone-back { left: -50px; }
@@ -873,6 +885,21 @@ body::before {
 }
 @media (max-width: 575.98px) {
   .ss-ads-list { grid-template-columns: 1fr; }
+  .ss-phones { min-height: 300px; padding: 0 1.25rem; }
+  .ss-phone { width: 122px; height: 244px; border-radius: 24px; padding: 7px; }
+  .ss-phone-back, .ss-phone-side { width: 100px; height: 200px; }
+  .ss-phone-back { left: -16px; }
+  .ss-phone-side { right: -16px; }
+  .ss-phone-notch { width: 44px; height: 14px; }
+  .ss-phone-screen { border-radius: 18px; padding: 1rem 0.75rem 0.9rem; }
+  .ss-play-btn { width: 44px; height: 44px; font-size: 1rem; }
+}
+@media (max-width: 360px) {
+  .ss-phones { padding: 0 0.75rem; }
+  .ss-phone { width: 108px; height: 216px; }
+  .ss-phone-back, .ss-phone-side { width: 88px; height: 176px; }
+  .ss-phone-back { left: -8px; }
+  .ss-phone-side { right: -8px; }
 }
 
 /* ============ WHY SLEEKSITES ============ */

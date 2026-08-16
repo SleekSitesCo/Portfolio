@@ -51,53 +51,76 @@ $(function () {
     $('html, body').animate({ scrollTop: 0 }, 600);
   });
 
-  /* ---------- Scroll reveal (Intersection Observer) ---------- */
-  var revealEls = document.querySelectorAll('.reveal-up');
+  /* ---------- Scroll reveal: AOS (Animate On Scroll) ----------
+     Elements carry data-aos="fade-up" (+ staggered data-aos-delay on grid
+     rows) in the markup. If the AOS script fails to load for any reason,
+     strip the data-aos attributes so AOS's CSS never leaves content stuck
+     at opacity: 0. */
+  var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  if ('IntersectionObserver' in window) {
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry, index) {
-        if (entry.isIntersecting) {
-          var el = entry.target;
-          var delay = (index % 4) * 70;
-          setTimeout(function () {
-            el.classList.add('in-view');
-          }, delay);
-          observer.unobserve(el);
-        }
-      });
-    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
-
-    revealEls.forEach(function (el) { observer.observe(el); });
+  if (window.AOS && !prefersReducedMotion) {
+    AOS.init({
+      duration: 700,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 80,
+      anchorPlacement: 'top-bottom'
+    });
   } else {
-    // Fallback: reveal everything immediately
-    revealEls.forEach(function (el) { el.classList.add('in-view'); });
+    document.querySelectorAll('[data-aos]').forEach(function (el) {
+      el.removeAttribute('data-aos');
+      el.removeAttribute('data-aos-delay');
+    });
   }
 
-  /* ---------- Testimonial carousel controls (custom dots synced to Bootstrap carousel) ---------- */
-  var $carousel = $('#testimonialCarousel');
-  var $dotsWrap = $('#testimonialDots');
-  var slideCount = $carousel.find('.carousel-item').length;
+  /* ---------- Hero visual: subtle pointer-tilt (desktop only, respects reduced motion) ---------- */
+  var $heroVisual = $('.ss-hero-visual');
+  if ($heroVisual.length && window.matchMedia('(hover: hover) and (pointer: fine)').matches && !prefersReducedMotion) {
+    var heroEl = $heroVisual[0];
+    heroEl.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+    heroEl.style.transformStyle = 'preserve-3d';
+    var tiltRaf = null;
 
-  for (var i = 0; i < slideCount; i++) {
-    var $dot = $('<span></span>').attr('data-index', i);
-    if (i === 0) $dot.addClass('active');
-    $dotsWrap.append($dot);
+    heroEl.addEventListener('mousemove', function (e) {
+      var rect = heroEl.getBoundingClientRect();
+      var relX = (e.clientX - rect.left) / rect.width - 0.5;
+      var relY = (e.clientY - rect.top) / rect.height - 0.5;
+
+      if (tiltRaf) cancelAnimationFrame(tiltRaf);
+      tiltRaf = requestAnimationFrame(function () {
+        heroEl.style.transform = 'rotateY(' + (relX * 6) + 'deg) rotateX(' + (relY * -6) + 'deg)';
+      });
+    });
+
+    heroEl.addEventListener('mouseleave', function () {
+      if (tiltRaf) cancelAnimationFrame(tiltRaf);
+      heroEl.style.transform = 'rotateY(0deg) rotateX(0deg)';
+    });
   }
 
-  var bsCarousel = bootstrap.Carousel.getOrCreateInstance($carousel[0], { interval: 6000, ride: 'carousel' });
+  /* ---------- Testimonial slider: Slick ---------- */
+  var $track = $('#testimonialTrack');
 
-  $dotsWrap.on('click', 'span', function () {
-    var index = $(this).data('index');
-    bsCarousel.to(index);
-  });
+  if ($track.length && $.fn.slick) {
+    $track.slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      dots: true,
+      appendDots: $('#testimonialDots'),
+      fade: true,
+      adaptiveHeight: true,
+      autoplay: true,
+      autoplaySpeed: 6000,
+      pauseOnHover: true,
+      speed: 500,
+      cssEase: 'cubic-bezier(0.16, 1, 0.3, 1)',
+      infinite: true
+    });
 
-  $('#testimonialPrev').on('click', function () { bsCarousel.prev(); });
-  $('#testimonialNext').on('click', function () { bsCarousel.next(); });
-
-  $carousel.on('slid.bs.carousel', function (e) {
-    $dotsWrap.find('span').removeClass('active').eq(e.to).addClass('active');
-  });
+    $('#testimonialPrev').on('click', function () { $track.slick('slickPrev'); });
+    $('#testimonialNext').on('click', function () { $track.slick('slickNext'); });
+  }
 
   /* ---------- Contact form: client-side validation + mailto ---------- */
   var $form = $('#contactForm');

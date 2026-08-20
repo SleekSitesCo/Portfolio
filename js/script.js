@@ -130,6 +130,55 @@ $(function () {
     });
   }
 
+  /* ---------- AI Creative: phone video previews ----------
+     Each phone has its own <video>. Clicking its play button plays a
+     4-second looping preview of that clip; clicking again pauses it.
+     Starting one preview pauses whatever else is currently playing, so
+     only one plays at a time. */
+  var CLIP_SECONDS = 20;
+  var $phoneScreens = $('.ss-phone-screen');
+
+  function setPlaying($screen, playing) {
+    var video = $screen.find('.ss-phone-video')[0];
+    var $icon = $screen.find('.ss-play-btn i');
+    $screen.toggleClass('is-playing', playing);
+    $icon.toggleClass('fa-play', !playing).toggleClass('fa-pause', playing);
+    if (video) {
+      if (playing) {
+        video.play().catch(function () {
+          // Autoplay/decoding blocked — fall back to the paused state.
+          setPlaying($screen, false);
+        });
+      } else {
+        video.pause();
+      }
+    }
+  }
+
+  $phoneScreens.each(function () {
+    var $screen = $(this);
+    var video = $screen.find('.ss-phone-video')[0];
+    if (!video) return;
+
+    video.addEventListener('timeupdate', function () {
+      if (video.currentTime >= CLIP_SECONDS) {
+        video.currentTime = 0;
+        if (video.paused) video.play().catch(function () {});
+      }
+    });
+
+    $screen.find('.ss-play-btn').on('click', function () {
+      var isPlaying = $screen.hasClass('is-playing');
+
+      // Pause every other phone so only one preview plays at a time.
+      $phoneScreens.not($screen).each(function () {
+        setPlaying($(this), false);
+      });
+
+      setPlaying($screen, !isPlaying);
+    });
+  });
+
   /* ---------- Contact form: client-side validation + mailto ---------- */
   var $form = $('#contactForm');
 
@@ -173,7 +222,7 @@ $(function () {
       'Budget: ' + (budget || '—') + '\n\n' +
       'Message:\n' + message;
 
-    var mailtoLink = 'mailto:hello@sleeksites.co' +
+    var mailtoLink = 'mailto:sleeksites.co1@gmail.com' +
       '?subject=' + encodeURIComponent(subject) +
       '&body=' + encodeURIComponent(body);
 

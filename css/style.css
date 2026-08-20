@@ -1314,7 +1314,11 @@ body::before {
   width: 22px;
   border-radius: 4px;
 }
-
+.ss-nav-logo {
+    height: 32px;
+    width: auto;
+    display: block
+}
 /* ============ RESPONSIVE TYPE TWEAKS ============ */
 @media (max-width: 575.98px) {
   .ss-hero-actions .btn { width: 100%; text-align: center; }

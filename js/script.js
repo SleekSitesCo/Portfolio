@@ -26,12 +26,6 @@ $(function () {
     }
   });
 
-  /* ---------- Smooth anchor scrolling ----------
-     Handled natively: html { scroll-behavior: smooth; } in style.css does
-     the animation, and .ss-section / .ss-hero carry scroll-margin-top so
-     targets land below the fixed navbar instead of underneath it. No JS
-     needed for the scroll itself — anchors just use their real href="#id". */
-
   /* ---------- Back to top button ---------- */
   var $backToTop = $('#backToTop');
   $(window).on('scroll', function () {
@@ -45,13 +39,7 @@ $(function () {
     $('html, body').animate({ scrollTop: 0 }, 600);
   });
 
-  /* ---------- Testimonial slider: Slick ----------
-     Initialized BEFORE AOS on purpose: Slick restructures the DOM (wraps
-     slides, clones extras for infinite loop), which shifts the vertical
-     position of every section below it (final CTA, contact, footer). If
-     AOS measures trigger points before that happens, those sections'
-     triggers end up stale/too-low — which is exactly why "Let's talk" and
-     Contact were animating late on desktop. */
+  /* ---------- Testimonial slider: Slick ---------- */
   var $track = $('#testimonialTrack');
 
   if ($track.length && $.fn.slick) {
@@ -75,11 +63,7 @@ $(function () {
     $('#testimonialNext').on('click', function () { $track.slick('slickNext'); });
   }
 
-  /* ---------- Scroll reveal: AOS (Animate On Scroll) ----------
-     Elements carry data-aos="fade-up" (+ staggered data-aos-delay on grid
-     rows) in the markup. If the AOS script fails to load for any reason,
-     strip the data-aos attributes so AOS's CSS never leaves content stuck
-     at opacity: 0. */
+  /* ---------- Scroll reveal: AOS ---------- */
   var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (window.AOS && !prefersReducedMotion) {
@@ -91,10 +75,6 @@ $(function () {
       anchorPlacement: 'top-bottom'
     });
 
-    // Safety net: webfonts swapping in (font-display: swap), the Slick
-    // clones settling, and anything else that nudges layout after init
-    // can leave AOS holding stale offsets for lower sections. Recalculate
-    // once everything has actually finished loading.
     window.addEventListener('load', function () {
       AOS.refreshHard();
     });
@@ -105,7 +85,7 @@ $(function () {
     });
   }
 
-  /* ---------- Hero visual: subtle pointer-tilt (desktop only, respects reduced motion) ---------- */
+  /* ---------- Hero visual: subtle pointer-tilt ---------- */
   var $heroVisual = $('.ss-hero-visual');
   if ($heroVisual.length && window.matchMedia('(hover: hover) and (pointer: fine)').matches && !prefersReducedMotion) {
     var heroEl = $heroVisual[0];
@@ -130,11 +110,7 @@ $(function () {
     });
   }
 
-  /* ---------- AI Creative: phone video previews ----------
-     Each phone has its own <video>. Clicking its play button plays a
-     4-second looping preview of that clip; clicking again pauses it.
-     Starting one preview pauses whatever else is currently playing, so
-     only one plays at a time. */
+  /* ---------- AI Creative: phone video previews ---------- */
   var CLIP_SECONDS = 20;
   var $phoneScreens = $('.ss-phone-screen');
 
@@ -146,7 +122,6 @@ $(function () {
     if (video) {
       if (playing) {
         video.play().catch(function () {
-          // Autoplay/decoding blocked — fall back to the paused state.
           setPlaying($screen, false);
         });
       } else {
@@ -169,17 +144,43 @@ $(function () {
 
     $screen.find('.ss-play-btn').on('click', function () {
       var isPlaying = $screen.hasClass('is-playing');
-
-      // Pause every other phone so only one preview plays at a time.
       $phoneScreens.not($screen).each(function () {
         setPlaying($(this), false);
       });
-
       setPlaying($screen, !isPlaying);
     });
   });
 
-  /* ---------- Contact form: client-side validation + mailto ---------- */
+  /* ---------- Email compose helper ----------
+     Mobile: use mailto: so it opens the native mail app (Gmail app,
+     Outlook, etc.) via the OS chooser — this works reliably on phones.
+     Desktop: use Gmail's web compose URL instead, since desktop browsers
+     often have no mail-app handler registered and mailto: silently does
+     nothing there. */
+  var destinationEmail = 'sleeksites.co1@gmail.com';
+
+  function isMobileDevice() {
+    return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  }
+
+  function openEmailCompose(to, subject, body) {
+    if (isMobileDevice()) {
+      var mailtoLink = 'mailto:' + to;
+      var params = [];
+      if (subject) params.push('subject=' + encodeURIComponent(subject));
+      if (body) params.push('body=' + encodeURIComponent(body));
+      if (params.length) mailtoLink += '?' + params.join('&');
+      window.location.href = mailtoLink;
+    } else {
+      var gmailComposeUrl = 'https://mail.google.com/mail/?view=cm&fs=1' +
+        '&to=' + encodeURIComponent(to) +
+        (subject ? '&su=' + encodeURIComponent(subject) : '') +
+        (body ? '&body=' + encodeURIComponent(body) : '');
+      window.open(gmailComposeUrl, '_blank');
+    }
+  }
+
+  /* ---------- Contact form: client-side validation + email compose ---------- */
   var $form = $('#contactForm');
 
   $form.on('submit', function (e) {
@@ -204,8 +205,6 @@ $(function () {
 
     if (!valid) return;
 
-    // Build a mailto link with the form contents pre-filled.
-    // Swap this block for a fetch() call to Formspree/Netlify Forms when ready.
     var name = $.trim($('#name').val());
     var email = $.trim($('#email').val());
     var company = $.trim($('#company').val());
@@ -222,15 +221,18 @@ $(function () {
       'Budget: ' + (budget || '—') + '\n\n' +
       'Message:\n' + message;
 
-    var mailtoLink = 'mailto:sleeksites.co1@gmail.com' +
-      '?subject=' + encodeURIComponent(subject) +
-      '&body=' + encodeURIComponent(body);
-
-    window.location.href = mailtoLink;
+    openEmailCompose(destinationEmail, subject, body);
   });
 
   $form.find('.ss-input').on('input change', function () {
     $(this).removeClass('is-invalid');
+  });
+
+  /* ---------- Direct "email us" links (Contact section + footer) ----------
+     Same mobile/desktop split as the form above. */
+  $('.js-gmail-compose').on('click', function (e) {
+    e.preventDefault();
+    openEmailCompose(destinationEmail);
   });
 
 });

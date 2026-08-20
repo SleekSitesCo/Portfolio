@@ -1,749 +1,1096 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SleekSites.co — Modern Websites, Web Apps & AI Video Ads</title>
-<meta name="description" content="SleekSites.co builds modern websites, custom web applications, and AI-powered video ads for businesses ready to stand out online.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SleekSites.co — Modern Websites, Web Apps & AI Video Ads</title>
+    <meta
+      name="description"
+      content="SleekSites.co builds modern websites, custom web applications, and AI-powered video ads for businesses ready to stand out online."
+    />
 
-<!-- Open Graph -->
-<meta property="og:title" content="SleekSites.co — Modern Websites, Web Apps & AI Video Ads">
-<meta property="og:description" content="Websites that look sleek. Systems that actually work. We design and build modern digital experiences and AI video ads for growing businesses.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://sleeksites.co">
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="SleekSites.co — Modern Websites, Web Apps & AI Video Ads"
+    />
+    <meta
+      property="og:description"
+      content="Websites that look sleek. Systems that actually work. We design and build modern digital experiences and AI video ads for growing businesses."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sleeksites.co" />
 
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="favicon/favicon.png">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png" />
+    <link rel="apple-touch-icon" href="assets/images/logo.png" />
 
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
 
-<!-- Bootstrap 5 -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-<!-- Font Awesome 6 -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Font Awesome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
 
-<!-- Slick Slider -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <!-- Slick Slider -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    />
 
-<!-- AOS (Animate On Scroll) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <!-- AOS (Animate On Scroll) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
 
-<!-- Custom CSS -->
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ============ NAVBAR ============ -->
+    <nav class="ss-navbar navbar navbar-expand-lg fixed-top" id="mainNav">
+      <div class="container">
+        <a
+          class="ss-wordmark navbar-brand d-flex align-items-center gap-2"
+          href="#top"
+        >
+          <img
+            src="assets/images/logo.png"
+            alt="SleekSites.co logo"
+            class="ss-nav-logo"
+          />
+          Sleek<span>Sites</span><span class="ss-dot">.co</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navContent"
+          aria-controls="navContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="ss-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navContent">
+          <ul class="navbar-nav mx-auto ss-nav-links">
+            <li class="nav-item">
+              <a class="nav-link ss-link" href="#work">Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link ss-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link ss-link" href="#process">Process</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link ss-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link ss-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+          <a href="#contact" class="btn ss-btn-primary ss-nav-cta"
+            >Start a Project</a
+          >
+        </div>
+      </div>
+    </nav>
 
-<!-- ============ NAVBAR ============ -->
-<nav class="ss-navbar navbar navbar-expand-lg fixed-top" id="mainNav">
-  <div class="container">
-    <a class="ss-wordmark navbar-brand" href="#top">Sleek<span>Sites</span><span class="ss-dot">.co</span></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="ss-toggler-icon"></span>
+    <!-- ============ HERO ============ -->
+    <header class="ss-hero" id="top">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-6">
+            <p class="ss-eyebrow reveal-up" data-aos="fade-up">
+              Web Development · Digital Experiences · AI Creative
+            </p>
+            <h1 class="ss-hero-title reveal-up" data-aos="fade-up">
+              Websites that look sleek.<br /><span class="ss-italic-accent"
+                >Systems that actually work.</span
+              >
+            </h1>
+            <p class="ss-hero-sub reveal-up" data-aos="fade-up">
+              We design and build modern websites, custom web applications, and
+              digital experiences that help businesses look better, work
+              smarter, and grow.
+            </p>
+            <div class="ss-hero-actions reveal-up" data-aos="fade-up">
+              <a href="#contact" class="btn ss-btn-primary ss-btn-lg"
+                >Start a Project</a
+              >
+              <a href="#work" class="btn ss-btn-ghost ss-btn-lg"
+                >View Our Work <i class="fa-solid fa-arrow-right ss-rot-45"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="ss-hero-visual reveal-up" data-aos="fade-up">
+              <div class="ss-window ss-window-main">
+                <div class="ss-window-bar">
+                  <span></span><span></span><span></span>
+                  <div class="ss-window-url">sleeksites.co</div>
+                </div>
+                <div class="ss-window-body">
+                  <div class="ss-mock-nav"></div>
+                  <div class="ss-mock-hero">
+                    <div class="ss-mock-line w-70"></div>
+                    <div class="ss-mock-line w-40"></div>
+                    <div class="ss-mock-pill"></div>
+                  </div>
+                  <div class="ss-mock-grid">
+                    <div class="ss-mock-card"></div>
+                    <div class="ss-mock-card"></div>
+                    <div class="ss-mock-card"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="ss-window ss-window-float ss-window-dash">
+                <div class="ss-dash-header">
+                  <span class="ss-dash-dot"></span> Revenue
+                </div>
+                <div class="ss-dash-chart">
+                  <span style="height: 38%"></span
+                  ><span style="height: 62%"></span
+                  ><span style="height: 48%"></span>
+                  <span style="height: 80%"></span
+                  ><span style="height: 66%"></span
+                  ><span style="height: 92%"></span>
+                </div>
+              </div>
+              <div class="ss-window ss-window-float ss-window-badge">
+                <i class="fa-solid fa-bolt"></i>
+                <div>
+                  <div class="ss-badge-title">Performance</div>
+                  <div class="ss-badge-value">99/100</div>
+                </div>
+              </div>
+              <div class="ss-hero-blob"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============ TRUST STRIP ============ -->
+    <section class="ss-trust">
+      <div class="container">
+        <div class="row g-4">
+          <div
+            class="col-6 col-lg-3 reveal-up"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
+            <div class="ss-trust-item">
+              <i class="fa-solid fa-sliders"></i>
+              <h3>Custom-built</h3>
+              <p>Designed around your business.</p>
+            </div>
+          </div>
+          <div
+            class="col-6 col-lg-3 reveal-up"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="ss-trust-item">
+              <i class="fa-solid fa-mobile-screen"></i>
+              <h3>Responsive</h3>
+              <p>Beautiful across every screen.</p>
+            </div>
+          </div>
+          <div
+            class="col-6 col-lg-3 reveal-up"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="ss-trust-item">
+              <i class="fa-solid fa-arrow-trend-up"></i>
+              <h3>Scalable</h3>
+              <p>Built to grow with you.</p>
+            </div>
+          </div>
+          <div
+            class="col-6 col-lg-3 reveal-up"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="ss-trust-item">
+              <i class="fa-solid fa-gauge-high"></i>
+              <h3>Performance-focused</h3>
+              <p>Fast, reliable, and efficient.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SELECTED WORK ============ -->
+    <section class="ss-section" id="work">
+      <div class="container">
+        <div class="ss-section-head reveal-up" data-aos="fade-up">
+          <p class="ss-eyebrow">Selected work</p>
+          <h2 class="ss-section-title">
+            Digital products built to solve<br />real business problems.
+          </h2>
+        </div>
+
+        <!-- Featured full-width project -->
+        <article
+          class="ss-project ss-project-featured reveal-up"
+          data-aos="fade-up"
+        >
+          <div class="row align-items-center g-5">
+            <div class="col-lg-7 order-lg-2">
+              <div class="ss-project-visual ss-visual-doughbros">
+                <a
+                  href="https://khalad-shykh.github.io/career_coacing/"
+                  target="_blank"
+                >
+                  <img src="assets/images/MHI-T.jpg" />
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-5 order-lg-1">
+              <span class="ss-project-index">01</span>
+              <p class="ss-project-cat">
+                import, export firm / Business Website
+              </p>
+              <h3 class="ss-project-name">MHI TRADING</h3>
+              <p class="ss-project-desc">
+                Import, Export, and Indenting: Sources and supplies
+                international commodities and equipment, and participates in
+                global commercial tenders.
+              </p>
+              <p class="ss-project-tech">Bootstrap 5 · JavaScript · REST API</p>
+              <a
+                href="https://khalad-shykh.github.io/career_coacing/"
+                class="ss-project-link"
+                target="_blank"
+                >View Project <i class="fa-solid fa-arrow-right ss-rot-n45"></i
+              ></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 50/50 split -->
+        <div class="row g-4 g-lg-5 ss-project-row">
+          <div class="col-lg-6 reveal-up" data-aos="fade-up" data-aos-delay="0">
+            <article class="ss-project ss-project-split">
+              <div class="ss-project-visual ss-visual-atlas">
+                <a href="https://corewellnessworks.com/" target="_blank">
+                  <img src="assets/images/core-wellness.jpg" />
+                </a>
+              </div>
+              <span class="ss-project-index">02</span>
+              <p class="ss-project-cat">Web Application</p>
+              <h3 class="ss-project-name">CORE WELLNESS WORKS</h3>
+              <p class="ss-project-desc">
+                CORE WELLNESS WORKS serves as a sanctuary for women, blending
+                physical core conditioning with mindfulness..
+              </p>
+              <p class="ss-project-tech">Laravel · MySQL · Chart Rendering</p>
+              <a
+                href="https://corewellnessworks.com/"
+                target="_blank"
+                class="ss-project-link"
+                >View Project <i class="fa-solid fa-arrow-right ss-rot-n45"></i
+              ></a>
+            </article>
+          </div>
+          <div
+            class="col-lg-6 reveal-up"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <article class="ss-project ss-project-split">
+              <div class="ss-project-visual ss-visual-vault">
+                <div class="ss-browser-chrome">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="ss-visual-inner ss-dash-mock">
+                  <div class="ss-vault-rows">
+                    <div class="ss-vault-row"><span></span><span></span></div>
+                    <div class="ss-vault-row"><span></span><span></span></div>
+                    <div class="ss-vault-row"><span></span><span></span></div>
+                  </div>
+                  <div class="ss-vault-graph">
+                    <svg viewBox="0 0 200 60" preserveAspectRatio="none">
+                      <polyline
+                        points="0,50 30,35 60,42 90,20 120,28 150,10 200,15"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <span class="ss-project-index">03</span>
+              <p class="ss-project-cat">FinTech / Web Application</p>
+              <h3 class="ss-project-name">Vault</h3>
+              <p class="ss-project-desc">
+                A modern investor portal and financial dashboard designed for
+                clarity, trust, and fast decision-making.
+              </p>
+              <p class="ss-project-tech">PHP · MySQL · Secure APIs</p>
+              <a href="#" class="ss-project-link"
+                >View Project <i class="fa-solid fa-arrow-right ss-rot-n45"></i
+              ></a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="ss-section ss-section-tint" id="services">
+      <div class="container">
+        <div class="ss-section-head reveal-up" data-aos="fade-up">
+          <p class="ss-eyebrow">What we build</p>
+          <h2 class="ss-section-title">
+            From your first landing page to the<br />systems running behind your
+            business.
+          </h2>
+          <p class="ss-section-sub">
+            We build digital products designed around real goals.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div
+            class="col-md-6 col-lg-3 reveal-up"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
+            <div class="ss-service-card">
+              <i class="fa-solid fa-window-restore"></i>
+              <h3>Business Websites</h3>
+              <p>
+                Modern, responsive websites designed to make your business look
+                credible and convert visitors.
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-3 reveal-up"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="ss-service-card">
+              <i class="fa-solid fa-bullseye"></i>
+              <h3>Landing Pages</h3>
+              <p>
+                Focused landing pages built around a clear message, offer, and
+                conversion goal.
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-3 reveal-up"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="ss-service-card">
+              <i class="fa-solid fa-code"></i>
+              <h3>Custom Web Applications</h3>
+              <p>
+                Purpose-built applications designed around your unique business
+                processes.
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-3 reveal-up"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="ss-service-card">
+              <i class="fa-solid fa-gauge"></i>
+              <h3>Admin Dashboards</h3>
+              <p>
+                Clean dashboards that turn complex business data into something
+                your team can actually use.
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-3 reveal-up"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
+            <div class="ss-service-card">
+              <i class="fa-solid fa-calendar-check"></i>
+              <h3>Booking &amp; Management Systems</h3>
+              <p>
+                Digital systems that simplify bookings, operations, customers,
+                and workflows.
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-3 reveal-up"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="ss-service-card">
+              <i class="fa-solid fa-plug"></i>
+              <h3>API Integrations</h3>
+              <p>
+                Connect your website or application with the tools and platforms
+                your business already uses.
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-3 reveal-up"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="ss-service-card">
+              <i class="fa-solid fa-bag-shopping"></i>
+              <h3>E-commerce</h3>
+              <p>
+                Modern online stores designed for smooth shopping experiences.
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-3 reveal-up"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="ss-service-card">
+              <i class="fa-solid fa-rotate"></i>
+              <h3>Website Redesigns</h3>
+              <p>
+                Transform outdated websites into modern, responsive digital
+                experiences.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AI VIDEO ADS ============ -->
+    <section class="ss-section ss-ads" id="ai-ads">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5">
+            <p class="ss-eyebrow reveal-up" data-aos="fade-up">AI Creative</p>
+            <h2 class="ss-section-title reveal-up" data-aos="fade-up">
+              Websites that convert.<br />Videos that get noticed.
+            </h2>
+            <p class="ss-hero-sub reveal-up" data-aos="fade-up">
+              From high-converting websites to scroll-stopping AI video ads, we
+              help businesses build a stronger digital presence from the first
+              impression to the final click.
+            </p>
+            <ul class="ss-ads-list reveal-up" data-aos="fade-up">
+              <li><i class="fa-solid fa-check"></i> Social media video ads</li>
+              <li><i class="fa-solid fa-check"></i> Instagram Reels</li>
+              <li><i class="fa-solid fa-check"></i> TikTok-style ads</li>
+              <li><i class="fa-solid fa-check"></i> Product advertisements</li>
+              <li>
+                <i class="fa-solid fa-check"></i> Brand promotional videos
+              </li>
+              <li><i class="fa-solid fa-check"></i> Product showcase videos</li>
+              <li><i class="fa-solid fa-check"></i> UGC-style AI ads</li>
+              <li>
+                <i class="fa-solid fa-check"></i> Short-form campaign creatives
+              </li>
+            </ul>
+            <a
+              href="#contact"
+              class="btn ss-btn-primary ss-btn-lg reveal-up"
+              data-aos="fade-up"
+              >Create My Ad</a
+            >
+          </div>
+          <div class="col-lg-7">
+            <div class="ss-phones reveal-up" data-aos="fade-up">
+              <div class="ss-phone ss-phone-back">
+                <div class="ss-phone-screen ss-phone-thumb-2">
+                  <div class="ss-phone-caption">Product Showcase</div>
+                  <button class="ss-play-btn" aria-label="Play video preview">
+                    <i class="fa-solid fa-play"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="ss-phone ss-phone-front">
+                <div class="ss-phone-notch"></div>
+                <div class="ss-phone-screen ss-phone-thumb-1">
+                  <div class="ss-phone-top">
+                    <span class="ss-live-dot"></span> Reel
+                  </div>
+                  <button class="ss-play-btn" aria-label="Play video preview">
+                    <i class="fa-solid fa-play"></i>
+                  </button>
+                  <div class="ss-phone-bottom">
+                    <div class="ss-mock-line w-60 light"></div>
+                    <div class="ss-mock-line w-30 light"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="ss-phone ss-phone-side">
+                <div class="ss-phone-screen ss-phone-thumb-3">
+                  <div class="ss-phone-caption">UGC Ad</div>
+                  <button class="ss-play-btn" aria-label="Play video preview">
+                    <i class="fa-solid fa-play"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY SLEEKSITES ============ -->
+    <section class="ss-section" id="why">
+      <div class="container">
+        <div class="ss-section-head reveal-up" data-aos="fade-up">
+          <p class="ss-eyebrow">Why SleekSites</p>
+          <h2 class="ss-section-title">
+            Built for more than<br />just looking good.
+          </h2>
+          <p class="ss-section-sub">
+            SleekSites combines design and development, so what looks good also
+            works well — and holds up long after launch.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div
+            class="col-md-6 col-lg-4 reveal-up"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
+            <div class="ss-why-item">
+              <span class="ss-why-icon"
+                ><i class="fa-solid fa-sitemap"></i
+              ></span>
+              <h3>Designed around your business</h3>
+              <p>Not every business works the same way.</p>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 reveal-up"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="ss-why-item">
+              <span class="ss-why-icon"
+                ><i class="fa-solid fa-laptop-code"></i
+              ></span>
+              <h3>Clean development</h3>
+              <p>
+                Reliable, maintainable code that does not become a problem
+                later.
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 reveal-up"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="ss-why-item">
+              <span class="ss-why-icon"
+                ><i class="fa-solid fa-arrow-trend-up"></i
+              ></span>
+              <h3>Built to scale</h3>
+              <p>Systems designed to grow alongside your business.</p>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 reveal-up"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
+            <div class="ss-why-item">
+              <span class="ss-why-icon"><i class="fa-solid fa-users"></i></span>
+              <h3>User-first experiences</h3>
+              <p>Interfaces that are simple enough for real people to use.</p>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 reveal-up"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="ss-why-item">
+              <span class="ss-why-icon"
+                ><i class="fa-solid fa-lightbulb"></i
+              ></span>
+              <h3>Business-focused thinking</h3>
+              <p>We don't just build features. We solve problems.</p>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 reveal-up"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="ss-why-item">
+              <span class="ss-why-icon"
+                ><i class="fa-solid fa-comments"></i
+              ></span>
+              <h3>Clear communication</h3>
+              <p>Simple communication throughout the project.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section class="ss-section ss-section-tint" id="process">
+      <div class="container">
+        <div class="ss-section-head reveal-up" data-aos="fade-up">
+          <p class="ss-eyebrow">Process</p>
+          <h2 class="ss-section-title">From idea to launch.</h2>
+        </div>
+
+        <div class="ss-process">
+          <div class="ss-process-line"></div>
+          <div
+            class="ss-process-step ss-process-left reveal-up"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
+            <div class="ss-process-num">01</div>
+            <div class="ss-process-card">
+              <span class="ss-process-tag">Step 01</span>
+              <h3>Discover</h3>
+              <p>Understand the business, audience, goals, and requirements.</p>
+            </div>
+          </div>
+          <div
+            class="ss-process-step ss-process-right reveal-up"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
+            <div class="ss-process-num">02</div>
+            <div class="ss-process-card">
+              <span class="ss-process-tag">Step 02</span>
+              <h3>Design</h3>
+              <p>Turn the idea into a clear, intuitive digital experience.</p>
+            </div>
+          </div>
+          <div
+            class="ss-process-step ss-process-left reveal-up"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
+            <div class="ss-process-num">03</div>
+            <div class="ss-process-card">
+              <span class="ss-process-tag">Step 03</span>
+              <h3>Build</h3>
+              <p>Develop the product using modern technologies.</p>
+            </div>
+          </div>
+          <div
+            class="ss-process-step ss-process-right reveal-up"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
+            <div class="ss-process-num">04</div>
+            <div class="ss-process-card">
+              <span class="ss-process-tag">Step 04</span>
+              <h3>Launch</h3>
+              <p>Test, refine, deploy, and help the client move forward.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="ss-section ss-about" id="about">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center reveal-up" data-aos="fade-up">
+            <p class="ss-eyebrow">About</p>
+            <h2 class="ss-section-title">Small studio. Serious work.</h2>
+            <p class="ss-about-copy">
+              SleekSites.co is a focused digital studio combining thoughtful
+              design with strong development. We work with businesses that need
+              more than a template — a digital experience built around how they
+              actually operate.
+            </p>
+            <p class="ss-about-copy">
+              We care about the details users notice and the architecture they
+              don't.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TECHNOLOGY ============ -->
+    <section class="ss-section ss-tech">
+      <div class="container">
+        <div class="ss-section-head reveal-up" data-aos="fade-up">
+          <p class="ss-eyebrow">Technology</p>
+          <h2 class="ss-section-title">The tools behind the work.</h2>
+        </div>
+        <div class="ss-tech-pills reveal-up" data-aos="fade-up">
+          <span class="ss-pill">Laravel</span>
+          <span class="ss-pill">PHP</span>
+          <span class="ss-pill">MySQL</span>
+          <span class="ss-pill">JavaScript</span>
+          <span class="ss-pill">jQuery</span>
+          <span class="ss-pill">Bootstrap</span>
+          <span class="ss-pill">REST APIs</span>
+          <span class="ss-pill">Git</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="ss-section ss-section-tint" id="testimonials">
+      <div class="container">
+        <div class="ss-section-head reveal-up" data-aos="fade-up">
+          <p class="ss-eyebrow">Testimonials</p>
+          <h2 class="ss-section-title">What clients say.</h2>
+        </div>
+
+        <div
+          id="testimonialCarousel"
+          class="ss-carousel reveal-up"
+          data-aos="fade-up"
+        >
+          <div class="ss-carousel-track" id="testimonialTrack">
+            <div class="ss-slide">
+              <div class="ss-testimonial">
+                <i class="fa-solid fa-quote-left"></i>
+                <p>
+                  "From the first conversation, they understood what we needed.
+                  The result wasn't just a better website — it completely
+                  improved how our customers interact with us."
+                </p>
+                <div class="ss-testimonial-author">
+                  <img
+                    src="https://picsum.photos/seed/sleeksites-maria/80/80"
+                    alt=""
+                    class="ss-testimonial-avatar"
+                  />
+                  <span class="ss-testimonial-author-info"
+                    ><strong>Maria Chen</strong>
+                    <span>Operations Director, Pizza Bros</span></span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="ss-slide">
+              <div class="ss-testimonial">
+                <i class="fa-solid fa-quote-left"></i>
+                <p>
+                  "They didn't just design a dashboard — they understood how our
+                  team actually works and built around it. Onboarding took a
+                  day, not a month."
+                </p>
+                <div class="ss-testimonial-author">
+                  <img
+                    src="https://picsum.photos/seed/sleeksites-james/80/80"
+                    alt=""
+                    class="ss-testimonial-avatar"
+                  />
+                  <span class="ss-testimonial-author-info"
+                    ><strong>James Whitfield</strong>
+                    <span>Founder, Stockline</span></span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="ss-slide">
+              <div class="ss-testimonial">
+                <i class="fa-solid fa-quote-left"></i>
+                <p>
+                  "Communication was clear from day one. Every update felt
+                  intentional, and the final product looked and performed better
+                  than we imagined."
+                </p>
+                <div class="ss-testimonial-author">
+                  <img
+                    src="https://picsum.photos/seed/sleeksites-priya/80/80"
+                    alt=""
+                    class="ss-testimonial-avatar"
+                  />
+                  <span class="ss-testimonial-author-info"
+                    ><strong>Priya Nandan</strong>
+                    <span>Marketing Lead, Noma</span></span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ss-carousel-controls">
+            <button
+              class="ss-carousel-btn"
+              id="testimonialPrev"
+              aria-label="Previous testimonial"
+            >
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <div class="ss-carousel-dots" id="testimonialDots"></div>
+            <button
+              class="ss-carousel-btn"
+              id="testimonialNext"
+              aria-label="Next testimonial"
+            >
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="ss-final-cta">
+      <div class="container">
+        <div class="reveal-up" data-aos="fade-up">
+          <p class="ss-eyebrow ss-eyebrow-invert">Let's talk</p>
+          <h2 class="ss-final-cta-title">Have a project in mind?</h2>
+          <p class="ss-final-cta-sub">
+            Tell us what you're building. We'll help turn the idea into
+            something real.
+          </p>
+          <div class="ss-hero-actions">
+            <a href="#contact" class="btn ss-btn-light ss-btn-lg"
+              >Let's Build Something</a
+            >
+            <a href="#contact" class="btn ss-btn-ghost-invert ss-btn-lg"
+              >Start a Conversation</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="ss-section" id="contact">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-5">
+            <p class="ss-eyebrow reveal-up" data-aos="fade-up">Contact</p>
+            <h2 class="ss-section-title reveal-up" data-aos="fade-up">
+              Tell us about your project.
+            </h2>
+            <p class="ss-section-sub reveal-up" data-aos="fade-up">
+              Fill out the form and we'll get back to you within one business
+              day — or email us directly.
+            </p>
+            <a
+              href="#"
+              class="ss-contact-email reveal-up js-gmail-compose"
+              data-aos="fade-up"
+              ><i class="fa-solid fa-envelope"></i> sleeksites.co1@gmail.com</a
+            >
+          </div>
+          <div class="col-lg-7">
+            <form
+              class="ss-form reveal-up"
+              data-aos="fade-up"
+              id="contactForm"
+              novalidate
+            >
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="name" class="ss-label">Name</label>
+                  <input
+                    type="text"
+                    class="form-control ss-input"
+                    id="name"
+                    name="name"
+                    required
+                  />
+                  <div class="ss-error">Please enter your name.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="ss-label">Email</label>
+                  <input
+                    type="email"
+                    class="form-control ss-input"
+                    id="email"
+                    name="email"
+                    required
+                  />
+                  <div class="ss-error">Please enter a valid email.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="company" class="ss-label">Company</label>
+                  <input
+                    type="text"
+                    class="form-control ss-input"
+                    id="company"
+                    name="company"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="projectType" class="ss-label">Project Type</label>
+                  <select
+                    class="form-select ss-input"
+                    id="projectType"
+                    name="projectType"
+                    required
+                  >
+                    <option value="" selected disabled>Select an option</option>
+                    <option>Business Website</option>
+                    <option>Landing Page</option>
+                    <option>Custom Web Application</option>
+                    <option>Admin Dashboard</option>
+                    <option>Booking / Management System</option>
+                    <option>E-commerce</option>
+                    <option>AI Video Ads</option>
+                    <option>Website Redesign</option>
+                    <option>Something else</option>
+                  </select>
+                  <div class="ss-error">Please select a project type.</div>
+                </div>
+                <div class="col-md-12">
+                  <label for="budget" class="ss-label">Budget</label>
+                  <select
+                    class="form-select ss-input"
+                    id="budget"
+                    name="budget"
+                  >
+                    <option value="" selected disabled>Select a range</option>
+                    <option>Under $2,000</option>
+                    <option>$2,000 – $5,000</option>
+                    <option>$5,000 – $10,000</option>
+                    <option>$10,000+</option>
+                    <option>Not sure yet</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label for="message" class="ss-label">Message</label>
+                  <textarea
+                    class="form-control ss-input"
+                    id="message"
+                    name="message"
+                    rows="4"
+                    required
+                  ></textarea>
+                  <div class="ss-error">
+                    Please tell us a bit about your project.
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button
+                    type="submit"
+                    class="btn ss-btn-primary ss-btn-lg w-100 w-md-auto"
+                  >
+                    Send Message
+                  </button>
+                  <p class="ss-form-note">
+                    This opens Gmail in a new tab with your message pre-filled.
+                  </p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="ss-footer">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-4">
+            <a class="ss-wordmark ss-wordmark-footer" href="#top"
+              >Sleek<span>Sites</span><span class="ss-dot">.co</span></a
+            >
+            <p class="ss-footer-tagline">
+              Digital experiences, built beautifully.
+            </p>
+            <div class="ss-footer-social">
+              <a
+                href="https://www.instagram.com/sleeksites.co/"
+                aria-label="Instagram"
+                target="_blank"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="LinkedIn" target="_blank"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <a
+                href="https://web.facebook.com/profile.php?id=61593607371129"
+                aria-label="Fiverr"
+                target="_blank"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a href="#" aria-label="Whatsapp" target="_blank"
+                ><i class="fa-brands fa-whatsapp"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h4 class="ss-footer-heading">Navigation</h4>
+            <ul class="ss-footer-links">
+              <li><a href="#work">Work</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#process">Process</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h4 class="ss-footer-heading">Services</h4>
+            <ul class="ss-footer-links">
+              <li><a href="#services">Websites</a></li>
+              <li><a href="#services">Web Applications</a></li>
+              <li><a href="#ai-ads">AI Video Ads</a></li>
+              <li><a href="#services">E-commerce</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4">
+            <h4 class="ss-footer-heading">Contact</h4>
+            <a href="#" class="ss-footer-email js-gmail-compose"
+              >sleeksites.co1@gmail.com</a
+            >
+            <p class="ss-footer-note">
+              Based remotely. Working with businesses everywhere.
+            </p>
+          </div>
+        </div>
+        <div class="ss-footer-bottom">
+          <p>&copy; 2026 SleekSites.co. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button id="backToTop" class="ss-back-to-top" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
     </button>
-    <div class="collapse navbar-collapse" id="navContent">
-      <ul class="navbar-nav mx-auto ss-nav-links">
-        <li class="nav-item"><a class="nav-link ss-link" href="#work">Work</a></li>
-        <li class="nav-item"><a class="nav-link ss-link" href="#services">Services</a></li>
-        <li class="nav-item"><a class="nav-link ss-link" href="#process">Process</a></li>
-        <li class="nav-item"><a class="nav-link ss-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link ss-link" href="#contact">Contact</a></li>
-      </ul>
-      <a href="#contact" class="btn ss-btn-primary ss-nav-cta">Start a Project</a>
-    </div>
-  </div>
-</nav>
 
-<!-- ============ HERO ============ -->
-<header class="ss-hero" id="top">
-  <div class="container">
-    <div class="row align-items-center gy-5">
-      <div class="col-lg-6">
-        <p class="ss-eyebrow reveal-up" data-aos="fade-up">Web Development · Digital Experiences · AI Creative</p>
-        <h1 class="ss-hero-title reveal-up" data-aos="fade-up">Websites that look sleek.<br><span class="ss-italic-accent">Systems that actually work.</span></h1>
-        <p class="ss-hero-sub reveal-up" data-aos="fade-up">We design and build modern websites, custom web applications, and digital experiences that help businesses look better, work smarter, and grow.</p>
-        <div class="ss-hero-actions reveal-up" data-aos="fade-up">
-          <a href="#contact" class="btn ss-btn-primary ss-btn-lg">Start a Project</a>
-          <a href="#work" class="btn ss-btn-ghost ss-btn-lg">View Our Work <i class="fa-solid fa-arrow-right ss-rot-45"></i></a>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="ss-hero-visual reveal-up" data-aos="fade-up">
-          <div class="ss-window ss-window-main">
-            <div class="ss-window-bar">
-              <span></span><span></span><span></span>
-              <div class="ss-window-url">sleeksites.co</div>
-            </div>
-            <div class="ss-window-body">
-              <div class="ss-mock-nav"></div>
-              <div class="ss-mock-hero">
-                <div class="ss-mock-line w-70"></div>
-                <div class="ss-mock-line w-40"></div>
-                <div class="ss-mock-pill"></div>
-              </div>
-              <div class="ss-mock-grid">
-                <div class="ss-mock-card"></div>
-                <div class="ss-mock-card"></div>
-                <div class="ss-mock-card"></div>
-              </div>
-            </div>
-          </div>
-          <div class="ss-window ss-window-float ss-window-dash">
-            <div class="ss-dash-header">
-              <span class="ss-dash-dot"></span> Revenue
-            </div>
-            <div class="ss-dash-chart">
-              <span style="height:38%"></span><span style="height:62%"></span><span style="height:48%"></span>
-              <span style="height:80%"></span><span style="height:66%"></span><span style="height:92%"></span>
-            </div>
-          </div>
-          <div class="ss-window ss-window-float ss-window-badge">
-            <i class="fa-solid fa-bolt"></i>
-            <div>
-              <div class="ss-badge-title">Performance</div>
-              <div class="ss-badge-value">99/100</div>
-            </div>
-          </div>
-          <div class="ss-hero-blob"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
-
-<!-- ============ TRUST STRIP ============ -->
-<section class="ss-trust">
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-6 col-lg-3 reveal-up" data-aos="fade-up" data-aos-delay="0">
-        <div class="ss-trust-item">
-          <i class="fa-solid fa-sliders"></i>
-          <h3>Custom-built</h3>
-          <p>Designed around your business.</p>
-        </div>
-      </div>
-      <div class="col-6 col-lg-3 reveal-up" data-aos="fade-up" data-aos-delay="100">
-        <div class="ss-trust-item">
-          <i class="fa-solid fa-mobile-screen"></i>
-          <h3>Responsive</h3>
-          <p>Beautiful across every screen.</p>
-        </div>
-      </div>
-      <div class="col-6 col-lg-3 reveal-up" data-aos="fade-up" data-aos-delay="200">
-        <div class="ss-trust-item">
-          <i class="fa-solid fa-arrow-trend-up"></i>
-          <h3>Scalable</h3>
-          <p>Built to grow with you.</p>
-        </div>
-      </div>
-      <div class="col-6 col-lg-3 reveal-up" data-aos="fade-up" data-aos-delay="300">
-        <div class="ss-trust-item">
-          <i class="fa-solid fa-gauge-high"></i>
-          <h3>Performance-focused</h3>
-          <p>Fast, reliable, and efficient.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SELECTED WORK ============ -->
-<section class="ss-section" id="work">
-  <div class="container">
-    <div class="ss-section-head reveal-up" data-aos="fade-up">
-      <p class="ss-eyebrow">Selected work</p>
-      <h2 class="ss-section-title">Digital products built to solve<br>real business problems.</h2>
-    </div>
-
-    <!-- Featured full-width project -->
-    <article class="ss-project ss-project-featured reveal-up" data-aos="fade-up">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-7 order-lg-2">
-          <div class="ss-project-visual ss-visual-doughbros">
-            <a href="https://khalad-shykh.github.io/career_coacing/" target="_blank">
-            <img src="assets/images/MHI-T.jpg">
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-5 order-lg-1">
-          <span class="ss-project-index">01</span>
-          <p class="ss-project-cat">import, export firm / Business Website</p>
-          <h3 class="ss-project-name">MHI TRADING</h3>
-          <p class="ss-project-desc">Import, Export, and Indenting: Sources and supplies international commodities and equipment, and participates in global commercial tenders.</p>
-          <p class="ss-project-tech">Bootstrap 5 · JavaScript · REST API</p>
-          <a href="https://khalad-shykh.github.io/career_coacing/" class="ss-project-link" target="_blank">View Project <i class="fa-solid fa-arrow-right ss-rot-n45"></i></a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 50/50 split -->
-    <div class="row g-4 g-lg-5 ss-project-row">
-      <div class="col-lg-6 reveal-up" data-aos="fade-up" data-aos-delay="0">
-        <article class="ss-project ss-project-split">
-          <div class="ss-project-visual ss-visual-atlas">
-            <a href="https://corewellnessworks.com/" target="_blank">
-            <img src="assets/images/core-wellness.jpg">
-            </a>
-          </div>
-          <span class="ss-project-index">02</span>
-          <p class="ss-project-cat">Web Application</p>
-          <h3 class="ss-project-name">CORE WELLNESS WORKS</h3>
-          <p class="ss-project-desc">CORE WELLNESS WORKS serves as a sanctuary for women, blending physical core conditioning with mindfulness..</p>
-          <p class="ss-project-tech">Laravel · MySQL · Chart Rendering</p>
-          <a href="https://corewellnessworks.com/" target="_blank" class="ss-project-link">View Project <i class="fa-solid fa-arrow-right ss-rot-n45"></i></a>
-        </article>
-      </div>
-      <div class="col-lg-6 reveal-up" data-aos="fade-up" data-aos-delay="100">
-        <article class="ss-project ss-project-split">
-          <div class="ss-project-visual ss-visual-vault">
-            <div class="ss-browser-chrome"><span></span><span></span><span></span></div>
-            <div class="ss-visual-inner ss-dash-mock">
-              <div class="ss-vault-rows">
-                <div class="ss-vault-row"><span></span><span></span></div>
-                <div class="ss-vault-row"><span></span><span></span></div>
-                <div class="ss-vault-row"><span></span><span></span></div>
-              </div>
-              <div class="ss-vault-graph">
-                <svg viewBox="0 0 200 60" preserveAspectRatio="none"><polyline points="0,50 30,35 60,42 90,20 120,28 150,10 200,15" /></svg>
-              </div>
-            </div>
-          </div>
-          <span class="ss-project-index">03</span>
-          <p class="ss-project-cat">FinTech / Web Application</p>
-          <h3 class="ss-project-name">Vault</h3>
-          <p class="ss-project-desc">A modern investor portal and financial dashboard designed for clarity, trust, and fast decision-making.</p>
-          <p class="ss-project-tech">PHP · MySQL · Secure APIs</p>
-          <a href="#" class="ss-project-link">View Project <i class="fa-solid fa-arrow-right ss-rot-n45"></i></a>
-        </article>
-      </div>
-    </div>
-
-    <!-- Horizontal editorial -->
-    <article class="ss-project ss-project-editorial reveal-up" data-aos="fade-up">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-5">
-          <span class="ss-project-index">04</span>
-          <p class="ss-project-cat">Creative / Brand Website</p>
-          <h3 class="ss-project-name">Forma</h3>
-          <p class="ss-project-desc">A premium architecture and interior design website built around large imagery, quiet typography, and restraint.</p>
-          <p class="ss-project-tech">Bootstrap 5 · Custom CSS · CMS-Ready</p>
-          <a href="#" class="ss-project-link">View Project <i class="fa-solid fa-arrow-right ss-rot-n45"></i></a>
-        </div>
-        <div class="col-lg-7">
-          <div class="ss-project-visual ss-visual-forma">
-            <div class="ss-browser-chrome"><span></span><span></span><span></span></div>
-            <div class="ss-visual-inner ss-forma-inner">
-              <div class="ss-forma-block ss-forma-lg"></div>
-              <div class="ss-forma-block ss-forma-sm"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <!-- 50/50 split second row -->
-    <div class="row g-4 g-lg-5 ss-project-row">
-      <div class="col-lg-6 reveal-up" data-aos="fade-up" data-aos-delay="0">
-        <article class="ss-project ss-project-split">
-          <div class="ss-project-visual ss-visual-stockline">
-            <div class="ss-browser-chrome"><span></span><span></span><span></span></div>
-            <div class="ss-visual-inner ss-dash-mock">
-              <div class="ss-stock-table">
-                <div class="ss-stock-row header"><span></span><span></span><span></span></div>
-                <div class="ss-stock-row"><span></span><span></span><span></span></div>
-                <div class="ss-stock-row"><span></span><span></span><span></span></div>
-                <div class="ss-stock-row"><span></span><span></span><span></span></div>
-              </div>
-            </div>
-          </div>
-          <span class="ss-project-index">05</span>
-          <p class="ss-project-cat">Business / Web Application</p>
-          <h3 class="ss-project-name">Stockline</h3>
-          <p class="ss-project-desc">An inventory and operations management platform that keeps growing teams in sync in real time.</p>
-          <p class="ss-project-tech">Laravel · MySQL · REST API</p>
-          <a href="#" class="ss-project-link">View Project <i class="fa-solid fa-arrow-right ss-rot-n45"></i></a>
-        </article>
-      </div>
-      <div class="col-lg-6 reveal-up" data-aos="fade-up" data-aos-delay="100">
-        <article class="ss-project ss-project-split">
-          <div class="ss-project-visual ss-visual-noma">
-            <div class="ss-browser-chrome"><span></span><span></span><span></span></div>
-            <div class="ss-visual-inner ss-noma-inner">
-              <div class="ss-noma-grid">
-                <div></div><div></div><div></div><div></div>
-              </div>
-              <div class="ss-noma-cta"></div>
-            </div>
-          </div>
-          <span class="ss-project-index">06</span>
-          <p class="ss-project-cat">E-commerce</p>
-          <h3 class="ss-project-name">Noma</h3>
-          <p class="ss-project-desc">A modern lifestyle e-commerce experience designed for effortless browsing and confident checkout.</p>
-          <p class="ss-project-tech">Bootstrap 5 · JavaScript · Payment-Ready</p>
-          <a href="#" class="ss-project-link">View Project <i class="fa-solid fa-arrow-right ss-rot-n45"></i></a>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SERVICES ============ -->
-<section class="ss-section ss-section-tint" id="services">
-  <div class="container">
-    <div class="ss-section-head reveal-up" data-aos="fade-up">
-      <p class="ss-eyebrow">What we build</p>
-      <h2 class="ss-section-title">From your first landing page to the<br>systems running behind your business.</h2>
-      <p class="ss-section-sub">We build digital products designed around real goals.</p>
-    </div>
-
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-3 reveal-up" data-aos="fade-up" data-aos-delay="0">
-        <div class="ss-service-card">
-          <i class="fa-solid fa-window-restore"></i>
-          <h3>Business Websites</h3>
-          <p>Modern, responsive websites designed to make your business look credible and convert visitors.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 reveal-up" data-aos="fade-up" data-aos-delay="100">
-        <div class="ss-service-card">
-          <i class="fa-solid fa-bullseye"></i>
-          <h3>Landing Pages</h3>
-          <p>Focused landing pages built around a clear message, offer, and conversion goal.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 reveal-up" data-aos="fade-up" data-aos-delay="200">
-        <div class="ss-service-card">
-          <i class="fa-solid fa-code"></i>
-          <h3>Custom Web Applications</h3>
-          <p>Purpose-built applications designed around your unique business processes.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 reveal-up" data-aos="fade-up" data-aos-delay="300">
-        <div class="ss-service-card">
-          <i class="fa-solid fa-gauge"></i>
-          <h3>Admin Dashboards</h3>
-          <p>Clean dashboards that turn complex business data into something your team can actually use.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 reveal-up" data-aos="fade-up" data-aos-delay="0">
-        <div class="ss-service-card">
-          <i class="fa-solid fa-calendar-check"></i>
-          <h3>Booking &amp; Management Systems</h3>
-          <p>Digital systems that simplify bookings, operations, customers, and workflows.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 reveal-up" data-aos="fade-up" data-aos-delay="100">
-        <div class="ss-service-card">
-          <i class="fa-solid fa-plug"></i>
-          <h3>API Integrations</h3>
-          <p>Connect your website or application with the tools and platforms your business already uses.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 reveal-up" data-aos="fade-up" data-aos-delay="200">
-        <div class="ss-service-card">
-          <i class="fa-solid fa-bag-shopping"></i>
-          <h3>E-commerce</h3>
-          <p>Modern online stores designed for smooth shopping experiences.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 reveal-up" data-aos="fade-up" data-aos-delay="300">
-        <div class="ss-service-card">
-          <i class="fa-solid fa-rotate"></i>
-          <h3>Website Redesigns</h3>
-          <p>Transform outdated websites into modern, responsive digital experiences.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ AI VIDEO ADS ============ -->
-<section class="ss-section ss-ads" id="ai-ads">
-  <div class="container">
-    <div class="row align-items-center g-5">
-      <div class="col-lg-5">
-        <p class="ss-eyebrow reveal-up" data-aos="fade-up">AI Creative</p>
-        <h2 class="ss-section-title reveal-up" data-aos="fade-up">Websites that convert.<br>Videos that get noticed.</h2>
-        <p class="ss-hero-sub reveal-up" data-aos="fade-up">From high-converting websites to scroll-stopping AI video ads, we help businesses build a stronger digital presence from the first impression to the final click.</p>
-        <ul class="ss-ads-list reveal-up" data-aos="fade-up">
-          <li><i class="fa-solid fa-check"></i> Social media video ads</li>
-          <li><i class="fa-solid fa-check"></i> Instagram Reels</li>
-          <li><i class="fa-solid fa-check"></i> TikTok-style ads</li>
-          <li><i class="fa-solid fa-check"></i> Product advertisements</li>
-          <li><i class="fa-solid fa-check"></i> Brand promotional videos</li>
-          <li><i class="fa-solid fa-check"></i> Product showcase videos</li>
-          <li><i class="fa-solid fa-check"></i> UGC-style AI ads</li>
-          <li><i class="fa-solid fa-check"></i> Short-form campaign creatives</li>
-        </ul>
-        <a href="#contact" class="btn ss-btn-primary ss-btn-lg reveal-up" data-aos="fade-up">Create My Ad</a>
-      </div>
-      <div class="col-lg-7">
-        <div class="ss-phones reveal-up" data-aos="fade-up">
-          <div class="ss-phone ss-phone-back">
-            <div class="ss-phone-screen ss-phone-thumb-2">
-              <div class="ss-phone-caption">Product Showcase</div>
-              <button class="ss-play-btn" aria-label="Play video preview"><i class="fa-solid fa-play"></i></button>
-            </div>
-          </div>
-          <div class="ss-phone ss-phone-front">
-            <div class="ss-phone-notch"></div>
-            <div class="ss-phone-screen ss-phone-thumb-1">
-              <div class="ss-phone-top">
-                <span class="ss-live-dot"></span> Reel
-              </div>
-              <button class="ss-play-btn" aria-label="Play video preview"><i class="fa-solid fa-play"></i></button>
-              <div class="ss-phone-bottom">
-                <div class="ss-mock-line w-60 light"></div>
-                <div class="ss-mock-line w-30 light"></div>
-              </div>
-            </div>
-          </div>
-          <div class="ss-phone ss-phone-side">
-            <div class="ss-phone-screen ss-phone-thumb-3">
-              <div class="ss-phone-caption">UGC Ad</div>
-              <button class="ss-play-btn" aria-label="Play video preview"><i class="fa-solid fa-play"></i></button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ WHY SLEEKSITES ============ -->
-<section class="ss-section" id="why">
-  <div class="container">
-    <div class="ss-section-head reveal-up" data-aos="fade-up">
-      <p class="ss-eyebrow">Why SleekSites</p>
-      <h2 class="ss-section-title">Built for more than<br>just looking good.</h2>
-      <p class="ss-section-sub">SleekSites combines design and development, so what looks good also works well — and holds up long after launch.</p>
-    </div>
-
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-4 reveal-up" data-aos="fade-up" data-aos-delay="0">
-        <div class="ss-why-item">
-          <span class="ss-why-icon"><i class="fa-solid fa-sitemap"></i></span>
-          <h3>Designed around your business</h3>
-          <p>Not every business works the same way.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 reveal-up" data-aos="fade-up" data-aos-delay="100">
-        <div class="ss-why-item">
-          <span class="ss-why-icon"><i class="fa-solid fa-laptop-code"></i></span>
-          <h3>Clean development</h3>
-          <p>Reliable, maintainable code that does not become a problem later.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 reveal-up" data-aos="fade-up" data-aos-delay="200">
-        <div class="ss-why-item">
-          <span class="ss-why-icon"><i class="fa-solid fa-arrow-trend-up"></i></span>
-          <h3>Built to scale</h3>
-          <p>Systems designed to grow alongside your business.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 reveal-up" data-aos="fade-up" data-aos-delay="0">
-        <div class="ss-why-item">
-          <span class="ss-why-icon"><i class="fa-solid fa-users"></i></span>
-          <h3>User-first experiences</h3>
-          <p>Interfaces that are simple enough for real people to use.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 reveal-up" data-aos="fade-up" data-aos-delay="100">
-        <div class="ss-why-item">
-          <span class="ss-why-icon"><i class="fa-solid fa-lightbulb"></i></span>
-          <h3>Business-focused thinking</h3>
-          <p>We don't just build features. We solve problems.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 reveal-up" data-aos="fade-up" data-aos-delay="200">
-        <div class="ss-why-item">
-          <span class="ss-why-icon"><i class="fa-solid fa-comments"></i></span>
-          <h3>Clear communication</h3>
-          <p>Simple communication throughout the project.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PROCESS ============ -->
-<section class="ss-section ss-section-tint" id="process">
-  <div class="container">
-    <div class="ss-section-head reveal-up" data-aos="fade-up">
-      <p class="ss-eyebrow">Process</p>
-      <h2 class="ss-section-title">From idea to launch.</h2>
-    </div>
-
-    <div class="ss-process">
-      <div class="ss-process-line"></div>
-      <div class="ss-process-step ss-process-left reveal-up" data-aos="fade-up" data-aos-delay="0">
-        <div class="ss-process-num">01</div>
-        <div class="ss-process-card">
-          <span class="ss-process-tag">Step 01</span>
-          <h3>Discover</h3>
-          <p>Understand the business, audience, goals, and requirements.</p>
-        </div>
-      </div>
-      <div class="ss-process-step ss-process-right reveal-up" data-aos="fade-up" data-aos-delay="0">
-        <div class="ss-process-num">02</div>
-        <div class="ss-process-card">
-          <span class="ss-process-tag">Step 02</span>
-          <h3>Design</h3>
-          <p>Turn the idea into a clear, intuitive digital experience.</p>
-        </div>
-      </div>
-      <div class="ss-process-step ss-process-left reveal-up" data-aos="fade-up" data-aos-delay="0">
-        <div class="ss-process-num">03</div>
-        <div class="ss-process-card">
-          <span class="ss-process-tag">Step 03</span>
-          <h3>Build</h3>
-          <p>Develop the product using modern technologies.</p>
-        </div>
-      </div>
-      <div class="ss-process-step ss-process-right reveal-up" data-aos="fade-up" data-aos-delay="0">
-        <div class="ss-process-num">04</div>
-        <div class="ss-process-card">
-          <span class="ss-process-tag">Step 04</span>
-          <h3>Launch</h3>
-          <p>Test, refine, deploy, and help the client move forward.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ABOUT ============ -->
-<section class="ss-section ss-about" id="about">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center reveal-up" data-aos="fade-up">
-        <p class="ss-eyebrow">About</p>
-        <h2 class="ss-section-title">Small studio. Serious work.</h2>
-        <p class="ss-about-copy">SleekSites.co is a focused digital studio combining thoughtful design with strong development. We work with businesses that need more than a template — a digital experience built around how they actually operate.</p>
-        <p class="ss-about-copy">We care about the details users notice and the architecture they don't.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TECHNOLOGY ============ -->
-<section class="ss-section ss-tech">
-  <div class="container">
-    <div class="ss-section-head reveal-up" data-aos="fade-up">
-      <p class="ss-eyebrow">Technology</p>
-      <h2 class="ss-section-title">The tools behind the work.</h2>
-    </div>
-    <div class="ss-tech-pills reveal-up" data-aos="fade-up">
-      <span class="ss-pill">Laravel</span>
-      <span class="ss-pill">PHP</span>
-      <span class="ss-pill">MySQL</span>
-      <span class="ss-pill">JavaScript</span>
-      <span class="ss-pill">jQuery</span>
-      <span class="ss-pill">Bootstrap</span>
-      <span class="ss-pill">REST APIs</span>
-      <span class="ss-pill">Git</span>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TESTIMONIALS ============ -->
-<section class="ss-section ss-section-tint" id="testimonials">
-  <div class="container">
-    <div class="ss-section-head reveal-up" data-aos="fade-up">
-      <p class="ss-eyebrow">Testimonials</p>
-      <h2 class="ss-section-title">What clients say.</h2>
-    </div>
-
-    <div id="testimonialCarousel" class="ss-carousel reveal-up" data-aos="fade-up">
-      <div class="ss-carousel-track" id="testimonialTrack">
-        <div class="ss-slide">
-          <div class="ss-testimonial">
-            <i class="fa-solid fa-quote-left"></i>
-            <p>"From the first conversation, they understood what we needed. The result wasn't just a better website — it completely improved how our customers interact with us."</p>
-            <div class="ss-testimonial-author">
-              <img src="https://picsum.photos/seed/sleeksites-maria/80/80" alt="" class="ss-testimonial-avatar">
-              <span class="ss-testimonial-author-info"><strong>Maria Chen</strong>
-              <span>Operations Director, Dough Bros</span></span>
-            </div>
-          </div>
-        </div>
-        <div class="ss-slide">
-          <div class="ss-testimonial">
-            <i class="fa-solid fa-quote-left"></i>
-            <p>"They didn't just design a dashboard — they understood how our team actually works and built around it. Onboarding took a day, not a month."</p>
-            <div class="ss-testimonial-author">
-              <img src="https://picsum.photos/seed/sleeksites-james/80/80" alt="" class="ss-testimonial-avatar">
-              <span class="ss-testimonial-author-info"><strong>James Whitfield</strong>
-              <span>Founder, Stockline</span></span>
-            </div>
-          </div>
-        </div>
-        <div class="ss-slide">
-          <div class="ss-testimonial">
-            <i class="fa-solid fa-quote-left"></i>
-            <p>"Communication was clear from day one. Every update felt intentional, and the final product looked and performed better than we imagined."</p>
-            <div class="ss-testimonial-author">
-              <img src="https://picsum.photos/seed/sleeksites-priya/80/80" alt="" class="ss-testimonial-avatar">
-              <span class="ss-testimonial-author-info"><strong>Priya Nandan</strong>
-              <span>Marketing Lead, Noma</span></span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="ss-carousel-controls">
-        <button class="ss-carousel-btn" id="testimonialPrev" aria-label="Previous testimonial"><i class="fa-solid fa-arrow-left"></i></button>
-        <div class="ss-carousel-dots" id="testimonialDots"></div>
-        <button class="ss-carousel-btn" id="testimonialNext" aria-label="Next testimonial"><i class="fa-solid fa-arrow-right"></i></button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FINAL CTA ============ -->
-<section class="ss-final-cta">
-  <div class="container">
-    <div class="reveal-up" data-aos="fade-up">
-      <p class="ss-eyebrow ss-eyebrow-invert">Let's talk</p>
-      <h2 class="ss-final-cta-title">Have a project in mind?</h2>
-      <p class="ss-final-cta-sub">Tell us what you're building. We'll help turn the idea into something real.</p>
-      <div class="ss-hero-actions">
-        <a href="#contact" class="btn ss-btn-light ss-btn-lg">Let's Build Something</a>
-        <a href="#contact" class="btn ss-btn-ghost-invert ss-btn-lg">Start a Conversation</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CONTACT ============ -->
-<section class="ss-section" id="contact">
-  <div class="container">
-    <div class="row g-5">
-      <div class="col-lg-5">
-        <p class="ss-eyebrow reveal-up" data-aos="fade-up">Contact</p>
-        <h2 class="ss-section-title reveal-up" data-aos="fade-up">Tell us about your project.</h2>
-        <p class="ss-section-sub reveal-up" data-aos="fade-up">Fill out the form and we'll get back to you within one business day — or email us directly.</p>
-        <a href="mailto:hello@sleeksites.co" class="ss-contact-email reveal-up" data-aos="fade-up"><i class="fa-solid fa-envelope"></i> hello@sleeksites.co</a>
-      </div>
-      <div class="col-lg-7">
-        <form class="ss-form reveal-up" data-aos="fade-up" id="contactForm" novalidate>
-          <div class="row g-3">
-            <div class="col-md-6">
-              <label for="name" class="ss-label">Name</label>
-              <input type="text" class="form-control ss-input" id="name" name="name" required>
-              <div class="ss-error">Please enter your name.</div>
-            </div>
-            <div class="col-md-6">
-              <label for="email" class="ss-label">Email</label>
-              <input type="email" class="form-control ss-input" id="email" name="email" required>
-              <div class="ss-error">Please enter a valid email.</div>
-            </div>
-            <div class="col-md-6">
-              <label for="company" class="ss-label">Company</label>
-              <input type="text" class="form-control ss-input" id="company" name="company">
-            </div>
-            <div class="col-md-6">
-              <label for="projectType" class="ss-label">Project Type</label>
-              <select class="form-select ss-input" id="projectType" name="projectType" required>
-                <option value="" selected disabled>Select an option</option>
-                <option>Business Website</option>
-                <option>Landing Page</option>
-                <option>Custom Web Application</option>
-                <option>Admin Dashboard</option>
-                <option>Booking / Management System</option>
-                <option>E-commerce</option>
-                <option>AI Video Ads</option>
-                <option>Website Redesign</option>
-                <option>Something else</option>
-              </select>
-              <div class="ss-error">Please select a project type.</div>
-            </div>
-            <div class="col-md-12">
-              <label for="budget" class="ss-label">Budget</label>
-              <select class="form-select ss-input" id="budget" name="budget">
-                <option value="" selected disabled>Select a range</option>
-                <option>Under $2,000</option>
-                <option>$2,000 – $5,000</option>
-                <option>$5,000 – $10,000</option>
-                <option>$10,000+</option>
-                <option>Not sure yet</option>
-              </select>
-            </div>
-            <div class="col-12">
-              <label for="message" class="ss-label">Message</label>
-              <textarea class="form-control ss-input" id="message" name="message" rows="4" required></textarea>
-              <div class="ss-error">Please tell us a bit about your project.</div>
-            </div>
-            <div class="col-12">
-              <button type="submit" class="btn ss-btn-primary ss-btn-lg w-100 w-md-auto">Send Message</button>
-              <p class="ss-form-note">This opens your email client with your message pre-filled. Want direct form submissions instead? This form is ready to connect to <a href="https://formspree.io" target="_blank" rel="noopener">Formspree</a> or Netlify Forms.</p>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FOOTER ============ -->
-<footer class="ss-footer">
-  <div class="container">
-    <div class="row g-5">
-      <div class="col-lg-4">
-        <a class="ss-wordmark ss-wordmark-footer" href="#top">Sleek<span>Sites</span><span class="ss-dot">.co</span></a>
-        <p class="ss-footer-tagline">Digital experiences, built beautifully.</p>
-        <div class="ss-footer-social">
-          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="#" aria-label="Fiverr"><i class="fa-brands fa-fiverr"></i></a>
-        </div>
-      </div>
-      <div class="col-6 col-lg-2">
-        <h4 class="ss-footer-heading">Navigation</h4>
-        <ul class="ss-footer-links">
-          <li><a href="#work">Work</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#process">Process</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-lg-2">
-        <h4 class="ss-footer-heading">Services</h4>
-        <ul class="ss-footer-links">
-          <li><a href="#services">Websites</a></li>
-          <li><a href="#services">Web Applications</a></li>
-          <li><a href="#ai-ads">AI Video Ads</a></li>
-          <li><a href="#services">E-commerce</a></li>
-        </ul>
-      </div>
-      <div class="col-lg-4">
-        <h4 class="ss-footer-heading">Contact</h4>
-        <a href="mailto:hello@sleeksites.co" class="ss-footer-email">hello@sleeksites.co</a>
-        <p class="ss-footer-note">Based remotely. Working with businesses everywhere.</p>
-      </div>
-    </div>
-    <div class="ss-footer-bottom">
-      <p>&copy; 2026 SleekSites.co. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
-
-<!-- Back to top -->
-<button id="backToTop" class="ss-back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
-
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<!-- Bootstrap Bundle -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Slick Slider -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-<!-- AOS (Animate On Scroll) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<!-- Custom JS -->
-<script src="js/script.js"></script>
-</body>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Slick Slider -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- AOS (Animate On Scroll) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+  </body>
 </html>
